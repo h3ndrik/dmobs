@@ -59,4 +59,4 @@ mobs:register_mob("dmobs:whale", {
 })
 
 
-mobs:register_egg("dmobs:whale", "Whale", "default_water_source.png", 1)
+mobs:register_egg("dmobs:whale", "Whale", "default_water.png", 1)
