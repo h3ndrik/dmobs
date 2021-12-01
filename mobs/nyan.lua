@@ -46,22 +46,23 @@ mobs:register_mob("dmobs:nyan", {
    do_custom = function(self)
    local apos = self.object:get_pos()
 		local vec = self.object:get_velocity()
-		local part = minetest.add_particlespawner(
-			5, --amount
-			0.3, --time
-			{x=apos.x-0.1, y=apos.y+0.3, z=apos.z-0.1}, --minpos
-			{x=apos.x+0.1, y=apos.y+0.4, z=apos.z+0.1}, --maxpos
-			{x=-0, y=-0, z=-0}, --minvel
-			{x=0, y=0, z=0}, --maxvel
-			{x=0,y=0,z=0}, --minacc
-			{x=-vec.x,y=0,z=-vec.z}, --maxacc
-			0.5, --minexptime
-			1.5, --maxexptime
-			3, --minsize
-			5, --maxsize
-			false, --collisiondetection
-			"dmobs_rainbow.png" --texture
-		)
+		local part = minetest.add_particlespawner({
+			amount = 5,
+			time = 0.3,
+			minpos = {x=apos.x-0.1, y=apos.y+0.3, z=apos.z-0.1},
+			maxpos = {x=apos.x+0.1, y=apos.y+0.4, z=apos.z+0.1},
+			minvel = {x=-0, y=-0, z=-0},
+			maxvel = {x=0, y=0, z=0},
+			minacc = {x=0,y=0,z=0},
+			maxacc = {x=-vec.x,y=0,z=-vec.z},
+			minexptime = 0.5,
+			maxexptime = 1.5,
+			minsize = 3,
+			maxsize = 5,
+			collisiondetection = false,
+			vertical = false,
+			texture = "dmobs_rainbow.png"
+		})
    end,
 	on_rightclick = function(self, clicker)
 
